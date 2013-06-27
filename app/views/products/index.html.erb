@@ -4,7 +4,10 @@
   <% @products.each do |product| %>
     <li>
       Product Name: "<%= product.name %>" costs $<%= product.price %>  |  
-	  Sold by <%= product.user.name if product.user.present? %>    
+	  Sold by <%= product.user.name if product.user.present? %> 
+    <%= link_to 'Details!', product_path(product), method: 'get' %>
+    <%= link_to 'Edit!', edit_product_path(product), method: 'get' %>
+    <%= link_to 'Destroy!', product_path(product), method: 'delete' %>  
     </li>
   <% end %>
 </ul>
